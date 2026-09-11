@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gamepad check</title>
+    <style>
+      body { font: 16px/1.6 system-ui, sans-serif; padding: 1.5rem; }
+      h1 { font-size: 1.3rem; }
+      dt { font-weight: 600; margin-top: .6rem; }
+      dd { margin: 0; font-family: ui-monospace, monospace; }
+      .yes { color: #0a7c2f; } .no { color: #b3261e; }
+      #pressed { font-size: 1.6rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Gamepad check</h1>
+    <p>Press any button on the controller. Nothing else on this page matters
+      until <em>API present</em> says yes.</p>
+    <dl>
+      <dt>API present (navigator.getGamepads)</dt><dd id="api">…</dd>
+      <dt>Pads reported</dt><dd id="pads">…</dd>
+      <dt>Pad id / mapping</dt><dd id="id">…</dd>
+      <dt>Buttons pressed so far</dt><dd id="pressed">…</dd>
+      <dt>Live button index</dt><dd id="live">…</dd>
+      <dt>connect events</dt><dd id="events">0</dd>
+      <dt>Polls</dt><dd id="polls">0</dd>
+    </dl>
+    <script>
+      const seenPresses = new Set();
+      let events = 0, polls = 0;
+      const set = (id, text, ok) => {
+        const el = document.getElementById(id);
+        el.textContent = text;
+        if (ok !== undefined) el.className = ok ? "yes" : "no";
+      };
+
+      addEventListener("gamepadconnected", (e) => {
+        events++;
+        set("events", `${events} (last: ${e.gamepad.id})`);
+      });
+
+      const hasApi = typeof navigator.getGamepads === "function";
+      set("api", hasApi ? "yes" : "NO - the Gamepad API is missing here", hasApi);
+
+      // Poll on a timer, not requestAnimationFrame, so this reports even when
+      // the view is not driving animation frames.
+      setInterval(() => {
+        set("polls", ++polls);
+        if (!hasApi) return;
+
+        const pads = [...navigator.getGamepads()].filter(Boolean);
+        set("pads", pads.length, pads.length > 0);
+        set("id", pads.map((p) => `${p.id} | mapping="${p.mapping}" | ${p.buttons.length} buttons`).join("\n") || "none");
+
+        const live = [];
+        for (const pad of pads) {
+          pad.buttons.forEach((b, i) => {
+            if (b.pressed) { live.push(i); seenPresses.add(i); }
+          });
+        }
+        set("live", live.length ? live.join(", ") : "-");
+        set("pressed", seenPresses.size ? [...seenPresses].sort((a, b) => a - b).join(", ") : "none yet");
+      }, 100);
+    </script>
+  </body>
+</html>

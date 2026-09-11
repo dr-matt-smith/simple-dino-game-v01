@@ -1,7 +1,7 @@
 {
   "id": "project-load",
   "title": "Project Load",
-  "generatedAt": "2026-09-11T15:46:08.362006+00:00",
+  "generatedAt": "2026-09-11T15:09:19.241664+00:00",
   "severity": "info",
   "summary": "The project loaded with no issues.",
   "sections": [
@@ -19,7 +19,7 @@
         {
           "severity": "info",
           "message": "Resources",
-          "value": "10 files in 3 folders",
+          "value": "2 files in 0 folders",
           "actions": []
         },
         {
@@ -61,7 +61,7 @@
         {
           "severity": "info",
           "message": "Load duration",
-          "value": "256 ms",
+          "value": "300 ms",
           "actions": []
         }
       ]
