@@ -1,0 +1,149 @@
+:root {
+  --primary: #66c2ff;
+  --primary-dark: #0077cc;
+  --secondary: #cbd1e1;
+  --tertiary: #e5e9f2;
+  --bg: #f1f3f9;
+  --dark: #1e253b;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--bg);
+  color: var(--dark);
+  line-height: 1.6;
+  font-family: system-ui, sans-serif;
+}
+
+h1 {
+  margin: 1.5rem auto;
+  color: var(--dark);
+  text-align: center;
+}
+
+h2,
+h3 {
+  margin: 1rem 0;
+  color: var(--dark);
+  text-align: center;
+}
+
+/* Game Canvas Styles */
+
+.container {
+  margin: 0 auto 1.5rem;
+  padding: 1rem;
+  border: 2px solid #cbd1e1;
+  border-radius: 1px;
+  background: white;
+  box-shadow: 2px 4px 0px 0px var(--tertiary);
+  text-align: center;
+}
+
+.canvas-container {
+  position: relative;
+  padding: 1rem;
+  display: inline-block;
+  width: calc(804px + 2rem); /* 800px canvas + 2px border */
+  max-width: 100%;
+}
+
+#gameCanvas {
+  display: block;
+  background: linear-gradient(
+    to bottom,
+    SkyBlue 0%,
+    SkyBlue 79%,
+    SandyBrown 79%,
+    SandyBrown 100%
+  );
+  cursor: pointer;
+}
+
+.game-ui {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.score,
+.game-status {
+  padding: 0.3rem 1rem;
+  border: 2px solid #cbd1e1;
+  border-radius: 1px;
+  background: white;
+  box-shadow: 2px 4px 0px 0px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  text-decoration: none;
+}
+
+.score {
+  min-width: 120px;
+  text-align: left;
+}
+
+.game-status {
+  background: var(--primary);
+  border-color: var(--primary-dark);
+  border-radius: 4px;
+  box-shadow: 2px 4px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.control-grid {
+  display: grid;
+  justify-content: center;
+  place-items: center;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 100px);
+  margin: 1rem auto;
+}
+
+kbd {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: max-content;
+}
+
+/* Responsive Design */
+@media (max-width: 860px) {
+  #gameCanvas {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+  }
+
+  .canvas-container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .control-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+}

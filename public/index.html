@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Simple Dino Game</title>
+  </head>
+  <body>
+    <main>
+      <h1>🦕 Simple Dino Game</h1>
+      <section class="container canvas-container">
+        <canvas id="gameCanvas" width="800" height="200"></canvas>
+        <div class="game-ui">
+          <div class="score">Score: <span id="score">0</span></div>
+          <div class="game-status" id="gameStatus">Press SPACE to Start!</div>
+        </div>
+      </section>
+
+      <section class="container">
+        <h3>Controls</h3>
+        <div class="control-grid">
+          <kbd>Space</kbd>
+          <span>Start/Jump/Restart</span>
+        </div>
+        <p>High score: <span id="highScore">0</span> (saved in this browser)</p>
+      </section>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
