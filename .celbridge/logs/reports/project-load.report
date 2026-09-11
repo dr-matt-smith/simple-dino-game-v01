@@ -1,0 +1,71 @@
+{
+  "id": "project-load",
+  "title": "Project Load",
+  "generatedAt": "2026-09-11T15:09:19.241664+00:00",
+  "severity": "info",
+  "summary": "The project loaded with no issues.",
+  "sections": [
+    {
+      "title": "Summary",
+      "kind": "facts",
+      "severity": "info",
+      "items": [
+        {
+          "severity": "info",
+          "message": "Project",
+          "value": "space-bug-test",
+          "actions": []
+        },
+        {
+          "severity": "info",
+          "message": "Resources",
+          "value": "2 files in 0 folders",
+          "actions": []
+        },
+        {
+          "severity": "info",
+          "message": "Packages loaded",
+          "value": "6 bundled, 0 project",
+          "actions": []
+        },
+        {
+          "severity": "info",
+          "message": "Editors resolved",
+          "value": "4",
+          "actions": []
+        },
+        {
+          "severity": "info",
+          "message": "Project version",
+          "value": "1.0.0",
+          "actions": []
+        },
+        {
+          "severity": "info",
+          "message": "Application version",
+          "value": "1.0.0",
+          "actions": []
+        },
+        {
+          "severity": "info",
+          "message": "Migration status",
+          "value": "Complete",
+          "actions": []
+        },
+        {
+          "severity": "info",
+          "message": "Outcome",
+          "value": "Loaded",
+          "actions": []
+        },
+        {
+          "severity": "info",
+          "message": "Load duration",
+          "value": "300 ms",
+          "actions": []
+        }
+      ]
+    }
+  ],
+  "version": 1
+}

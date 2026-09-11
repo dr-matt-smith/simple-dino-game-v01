@@ -1,0 +1,12 @@
+{
+  "DataVersion": "1",
+  "PreviousSelectedResources": "\u0022[\\u0022project:terminal.console\\u0022]\u0022",
+  "ActiveDocument": "\u0022project:terminal.console\u0022",
+  "SelectedDocuments": "{\u0022bottom_left\u0022:\u0022project:terminal.console\u0022}",
+  "OpenDocumentAddresses": "[{\u0022Resource\u0022:\u0022project:terminal.console\u0022,\u0022WindowIndex\u0022:0,\u0022Section\u0022:\u0022bottom_left\u0022,\u0022TabOrder\u0022:0}]",
+  "ExpandedFolders": "[]",
+  "DocumentEditorStates": "{\u0022project:readme.md\u0022:\u0022{\\u0022editorScrollPercentage\\u0022:0,\\u0022previewScrollPercentage\\u0022:0,\\u0022viewMode\\u0022:\\u0022preview\\u0022,\\u0022editorFlexShare\\u0022:0.5}\u0022,\u0022project:dist/game.js\u0022:\u0022{\\u0022editorScrollPercentage\\u0022:0}\u0022}",
+  "AreaSplitRatios": "{\u0022main\u0022:{\u0022SplitRatio\u0022:0.5},\u0022bottom\u0022:{\u0022SplitRatio\u0022:0.5},\u0022side\u0022:{\u0022SplitRatio\u0022:0.5}}",
+  "Editor.PreviousNewFileExtension": "\u0022.console\u0022",
+  "Layout.UtilityPanelSelectedUtility": "\u0022celbridge.explorer\u0022"
+}
